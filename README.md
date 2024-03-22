@@ -1,11 +1,12 @@
 # Overview
 
-This is the official repository for the reproduction of experiments in **CAM-Based Methods Can See through Walls**
+This is the Python code for the experiments of the submission **CAM-Based Methods Can See through Walls**
 
-# Installations
+# Installation
 
+Python version should be >= 3.9
 The two main dependencies are: PyTorch 2.1 and DALI (1.35.0 -c420f32).
-The imagenet1k dataset is downloaded from [Huggingface](https://huggingface.co/datasets/imagenet-1k).
+The imagenet1k dataset can be downloaded from [Huggingface](https://huggingface.co/datasets/imagenet-1k).
 
 # Script Usage
 
