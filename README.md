@@ -10,4 +10,6 @@ The imagenet1k dataset can be downloaded from [Huggingface](https://huggingface.
 
 # Script Usage
 
+mieux detailler et dire comment use les script, genre dl imagenet dans le data_root_dir
+
 In the training script (vgg16_training.py) and preprocessing script (preprocess_imagenet1k_huggingface), there is a global path variable named **data_root_dir** that you need to fill with your Imagenet1-k dataset location. 
