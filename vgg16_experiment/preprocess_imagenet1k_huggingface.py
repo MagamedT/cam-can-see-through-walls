@@ -5,12 +5,12 @@ import random
 
 
 # ROOT path containing the mapping between synset and index (LOC_synset_mapping.txt) and imagenet data.
-data_dir = ""
+data_root_dir = ""
 
 
 
 # Load the mapping between synset and index
-synset_file = open(data_dir + "/LOC_synset_mapping.txt", "r")
+synset_file = open(data_root_dir + "/LOC_synset_mapping.txt", "r")
 synset_folder_index = dict() # dict containing the pairs (synset, imagenet index)
 
 for i, line in enumerate(synset_file.readlines()):
@@ -27,8 +27,8 @@ for i, line in enumerate(synset_file.readlines()):
 all_train_folder_list = list(synset_folder_index.keys())
 
 # create all the folder in train also in val folder
-val_folder_path = data_dir + "/data/val/"
-train_folder_path = data_dir + "/data/train/"
+val_folder_path = data_root_dir + "/data/val/"
+train_folder_path = data_root_dir + "/data/train/"
 
 def create_folder_classes(root_path):
     for folder_name in all_train_folder_list:
@@ -97,10 +97,10 @@ def create_image_label_association_txt(root_folder, output_file):
 
 # Usage for val folder
 root_folder = val_folder_path  # Replace with the path to your val folder if needed
-output_file = data_dir + "/val_labels.txt"   # Replace with the path where you want to save the .txt file
+output_file = data_root_dir + "/val_labels.txt"   # Replace with the path where you want to save the .txt file
 create_image_label_association_txt(root_folder, output_file)
 
 # Usage for train folder
 root_folder = train_folder_path  # Replace with the path to your train folder if needed
-output_file = data_dir + "/train_labels.txt"   # Replace with the path where you want to save the .txt file
+output_file = data_root_dir + "/train_labels.txt"   # Replace with the path where you want to save the .txt file
 create_image_label_association_txt(root_folder, output_file)
