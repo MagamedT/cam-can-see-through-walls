@@ -245,7 +245,7 @@ WEIGHT_DECAY = 1e-4
 LR_GAMMA = 0.1
 LR_STEP_SIZE = 30
 # path for model checkpoints.
-PATH_MODEL = data_root_dir + f"/checkpoint/model.pt"
+PATH_MODEL = data_root_dir + f"/model.pt"
 FP16_MODE = True
 resume = False
 
@@ -257,7 +257,7 @@ if FP16_MODE:
     scaler = torch.cuda.amp.GradScaler(enabled=use_amp, growth_factor=2, backoff_factor=0.5 ,growth_interval=100)
 
 if resume:
-    checkpoint = torch.load(data_root_dir + f"/checkpoint/model.pt")
+    checkpoint = torch.load(data_root_dir + f"/model.pt")
     
     custom_model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
@@ -318,6 +318,15 @@ for epoch in range(EPOCHS):
 
   # step scheduler after an epoch is ended.
   scheduler.step()
+
+  # checkpoint every epochs
+  torch.save({
+            'epoch': epoch,
+            'model_state_dict': custom_model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'scheduler': scheduler.state_dict(),
+            'scaler': scaler.state_dict(),
+            }, PATH_MODEL)
 
 
 print('Finished Training')
