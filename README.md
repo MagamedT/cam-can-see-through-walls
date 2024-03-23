@@ -4,12 +4,15 @@ This is the Python code for the experiments of the submission **CAM-Based Method
 
 # Installation
 
-Python version should be >= 3.9
-The two main dependencies are: PyTorch 2.1 and DALI (1.35.0 -c420f32).
+Python version should be >= 3.9.
+The two main dependencies are: PyTorch 2.1, DALI (1.35.0 -c420f32) and the last version of [grad-cam](https://github.com/jacobgil/pytorch-grad-cam).
 The imagenet1k dataset can be downloaded from [Huggingface](https://huggingface.co/datasets/imagenet-1k).
 
-# Script Usage
+# Folder hierarchy overview
 
-mieux detailler et dire comment use les script, genre dl imagenet dans le data_root_dir
+- *vgg16_experiment* contains the preprocessing code of Imagenet-1k and the training code for our VGG16-like model. Also, we give in this folder the pre-trained weights for our two models (masked VGG16 and unmasked VGG16)
+- *figure_code* contains two google colab notebooks (we higly advice to import them to Google Colab) to generate Figure 1, 3, 7, 8, 9 and Table 1 of our paper.
 
-In the training script (vgg16_training.py) and preprocessing script (preprocess_imagenet1k_huggingface), there is a global path variable named **data_root_dir** that you need to fill with your Imagenet1-k dataset location. 
+
+
+
