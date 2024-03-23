@@ -5,7 +5,7 @@ This is the Python code for the experiments of the submission **CAM-Based Method
 # Installation
 
 Python version should be >= 3.9.
-The two main dependencies are: PyTorch 2.1, DALI (1.35.0 -c420f32) and the last version of [grad-cam](https://github.com/jacobgil/pytorch-grad-cam).
+The three main dependencies are: PyTorch 2.1, DALI (1.35.0 -c420f32) and the last version of [grad-cam](https://github.com/jacobgil/pytorch-grad-cam).
 The imagenet1k dataset can be downloaded from [Hugging Face](https://huggingface.co/datasets/imagenet-1k).
 
 # Folder hierarchy overview
