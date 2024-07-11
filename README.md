@@ -12,6 +12,7 @@ The imagenet1k dataset can be downloaded from [Hugging Face](https://huggingface
 
 - *vgg16_experiment* contains the preprocessing code of Imagenet-1k and the training code for our VGG16-like model. Also, we give in this folder the pre-trained weights for our two models (masked VGG16 and unmasked VGG16)
 - *figure_code* contains two google colab notebooks (we higly advice to import them to Google Colab) to generate Figure 1, 3, 7, 8, 9 and Table 1 of our paper.
+- *processed_datasets_gradcam.zip* contains our two datasets, STACK-MIX and STACK-GEN.
 
 
 
