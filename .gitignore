@@ -1,1 +1,48 @@
+# Bytecode / cache
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# Virtual envs & tooling
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+.tox/
+coverage.xml
+*.coverage
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Notebooks
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Data & weights (keep only shared artifacts)
+figure_code/data/
+figure_code/model/
+processed_datasets_gradcam.zip
+*.pt
+*.pth
+*.ckpt
+
+# Logs & temp
+logs/
+wandb/
+*.log
+*.tmp
+
+# macOS / system files
 .DS_Store
+.AppleDouble
+*.icloud
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
