@@ -1,0 +1,10 @@
+torch>=2.1.0
+torchvision>=0.16.0
+pytorch-grad-cam>=1.4.8
+numpy>=1.24.0
+matplotlib>=3.7.0
+Pillow>=10.0.0
+# wandb>=0.16.0
+# nvidia-dali-cuda120==1.35.0
+# jupyterlab>=4.0.0
+# ipykernel>=6.0.0
