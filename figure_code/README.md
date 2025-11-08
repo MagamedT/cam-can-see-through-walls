@@ -25,7 +25,7 @@ figure_code/
 └── data/
     ├── stackgen/
     ├── stackmix/
-data/
+└── model/
     ├── params_vgg16_baseline.pt
     └── params_vgg16_masked.pt
 ```
