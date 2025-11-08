@@ -48,7 +48,7 @@ It includes:
    figure_code/data/
    ├── stackmix/                      # STACK-MIX images (imagenet data)
    ├── stackgen/                  # STACK-GEN images (generative model)
-   figure_code/data/
+   figure_code/model/
    ├── params_vgg16_baseline.pt      # pre-trained baseline VGG checkpoint
    └── params_vgg16_masked.pt        # pre-trained masked VGG checkpoint
    ```
