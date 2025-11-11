@@ -1,6 +1,6 @@
 # CAM-Based Methods Can See Through Walls
 
-This repository contains the ompanion code for
+This repository contains the companion code for
 [CAM-Based Methods Can See Through Walls](https://arxiv.org/abs/2404.01964).
 It includes:
 
