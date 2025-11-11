@@ -1,12 +1,14 @@
 # CAM-Based Methods Can See Through Walls
 
-This repository contains the code that accompanies the paper
+This repository contains the ompanion code for
 [CAM-Based Methods Can See Through Walls](https://arxiv.org/abs/2404.01964).
 It includes:
 
-- A VGG16-style network with an optional “masked” fully connected layer that enforces a spatial dead zone.
-- Processed STACK-MIX and STACK-GEN (diffusion-generated) image datasets used to build the figures in the paper.
-- utilities for generating CAM visualisations with multiple methods.
+- the two proposed image datasets STACK-MIX and STACK-GEN;
+- two VGG16 networks, one of them unable to see the bottom of the input image;
+- the code to reproduce our experiments.
+
+The notebook reproducing Figure 1 of the paper is [here](https://github.com/MagamedT/cam-can-see-through-walls/blob/main/figure_code/camMaps_on_stackmix_and_stackgen.ipynb).
 
 ## Quick Start
 
@@ -17,15 +19,15 @@ It includes:
    cd cam-can-see-through-walls
    ```
 
-2. **Minimal dependencies**
+2. **Install the minimal requirements**
 
    - PyTorch 2.1 (CUDA if available)
    - `pytorch-grad-cam`
    - `torchvision`
    - `matplotlib`, `numpy`, `Pillow`
    Optional: NVIDIA DALI 1.35.0 (only required for re-training with Imagenet-1k).
-   If you’re on a different CUDA toolkit, swap the nvidia-dali-cuda120 line for the build that matches your driver (e.g., nvidia-dali-cuda110).
-3. **Clean way: create a Python environment (Python ≥ 3.9)**
+   If you are on a different CUDA toolkit, swap the nvidia-dali-cuda120 line for the build that matches your driver (e.g., nvidia-dali-cuda110).
+Alternativaly: create a Python environment (Python ≥ 3.9):
 
    ```bash
    conda create -n cam-walls python=3.11 -y
@@ -36,9 +38,9 @@ It includes:
    pip install -r requirements.txt
    ```
 
-4. **Unpack provided datasets and weights**
+3. **Get the datasets and the models**
 
-   The dataset and model weights can be found in [this drive](https://drive.google.com/drive/folders/19LbSZcABEv3E0KB4KzlYQebjo8qDxr1S?usp=sharing).
+   The datasets and model weights can be found in [this drive](https://drive.google.com/drive/folders/19LbSZcABEv3E0KB4KzlYQebjo8qDxr1S?usp=sharing).
    Unzip the data into `figure_code/data/`
    ```bash
    unzip datasets.zip -d figure_code/data
@@ -53,12 +55,12 @@ It includes:
    └── params_vgg16_masked.pt        # pre-trained masked VGG checkpoint
    ```
 
-5. **Reproduce the figures**
+4. **Reproduce the results**
 
-   - `figure_code/camMaps_on_stackmix_and_stackgen.ipynb` generates several figures of the paper and Table 1.
-   - `figure_code/mnist_experiment.ipynb` replicates the MNIST sanity check for the Theorem.
+   - `figure_code/mnist_experiment.ipynb` replicates the MNIST experiment
+   - `figure_code/camMaps_on_stackmix_and_stackgen.ipynb` generates Figure 1 and Table 1
 
-GPU is optional; the scripts automatically map checkpoints to CPU when CUDA is unavailable.
+Note that GPU use is optional; the scripts automatically map checkpoints to CPU when CUDA is unavailable.
 
 ## Re-training the Network
 
@@ -69,6 +71,8 @@ To reproduce training:
    - Set `data_root_dir` to the preprocessed Imagenet directory.
 
 ## Citation
+
+If you use this code, please use the following to cite our work:
 
 ```bibtex
 @inproceedings{taimeskhanov2024cam,
