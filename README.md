@@ -10,6 +10,8 @@ It includes:
 
 The notebook reproducing Figure 1 of the paper is [here](https://github.com/MagamedT/cam-can-see-through-walls/blob/main/figure_code/camMaps_on_stackmix_and_stackgen.ipynb).
 
+![alt text](https://github.com/MagamedT/cam-can-see-through-walls/blob/main/figures/main_figure.png)
+
 ## Quick Start
 
 1. **Clone and enter the repo**
