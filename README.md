@@ -8,7 +8,7 @@ It includes:
 - two VGG16 networks, one of them unable to see the bottom of the input image;
 - the code to reproduce our experiments.
 
-The notebook reproducing Figure 1 of the paper is [here](https://github.com/MagamedT/cam-can-see-through-walls/blob/main/figure_code/camMaps_on_stackmix_and_stackgen.ipynb).
+The notebook reproducing Figure 1 of the paper (below) is [here](https://github.com/MagamedT/cam-can-see-through-walls/blob/main/figure_code/camMaps_on_stackmix_and_stackgen.ipynb).
 
 ![alt text](https://github.com/MagamedT/cam-can-see-through-walls/blob/main/figures/main_figure.png)
 
@@ -43,11 +43,7 @@ Alternativaly: create a Python environment (Python ≥ 3.9):
 3. **Get the datasets and the models**
 
    The datasets and model weights can be found in [this drive](https://drive.google.com/drive/folders/19LbSZcABEv3E0KB4KzlYQebjo8qDxr1S?usp=sharing).
-   Unzip the data into `figure_code/data/`
-   ```bash
-   unzip datasets.zip -d figure_code/data
-   ```
-   Ensure the following files are in `figure_code/data/` and `figure_code/model/`:
+   Unzip the data into `figure_code/data/` and the models into `figure_code/models/`. `figure_code/` should have the following structure:
    ```
    figure_code/data/
    ├── stackmix/                      # STACK-MIX images (imagenet data)
