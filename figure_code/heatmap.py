@@ -173,9 +173,9 @@ def get_heatmaps(model, dataset_batch, class_target = None, layers_idx = None, m
 
     return grayscale_cam
 
-def plot_heatmap_with_wall(heatmaps, dataset, idx = 0, save = False):
+def plot_heatmap_with_wall(heatmaps, dataset, idx = 0, save = False, show_image=True):
 
-    name_to_save = f"../figures/img_{idx}.png"
+    name_to_save = f"../figures/heatmap_{idx}.png"
 
     image = np.transpose((dataset[idx]/ (1000/225) + 0.5).squeeze().detach().cpu(), (1, 2, 0))
     gradCamMaps_tensor = heatmaps[idx]
@@ -183,7 +183,8 @@ def plot_heatmap_with_wall(heatmaps, dataset, idx = 0, save = False):
     fig, ax = plt.subplots(1, frameon=False)
 
     # plot img and saliency map
-    ax.imshow(image, alpha = 1.)
+    if show_image:
+        ax.imshow(image, alpha = 1.)
     ax.imshow(gradCamMaps_tensor, cmap = "jet", alpha = 0.7)
 
     # plot red hatched line
@@ -191,7 +192,7 @@ def plot_heatmap_with_wall(heatmaps, dataset, idx = 0, save = False):
     ax.axhline(y=xline_position, color='red', linestyle='--', linewidth=4)
 
     # Add a hatched zone to the left of the vertical line
-    ax.fill_betweenx(y=[xline_position-1/2, image.shape[1]-1/2], x1=-1, x2=image.shape[1], color='red', alpha=0.2, hatch='/')
+    ax.fill_betweenx(y=[xline_position-1/2, image.shape[1]-1/2], x1=-1, x2=image.shape[1], color='red', alpha=0.1, hatch='/')
 
     # fig setup and save
     ax.axis('off')
@@ -223,15 +224,21 @@ def plot_10_random_heatmaps(heatmaps, dataset):
 
     plt.show()  # Displays the subplot
 
-def plot_image(model, dataset, idx = 0):
+def plot_image(model, dataset, idx = 0, save=False):
+    
+    name_to_save = f"../figures/img_{idx}.png"
     image = dataset[idx]
     logits = model(image.unsqueeze(0))
     predicted_class = int(logits.argmax())
     label = IMAGENET_IDX_TO_LABEL.get(predicted_class, "Unknown class")
 
     plt.imshow(np.transpose((image / (1000 / 225) + 0.5).squeeze().detach().cpu(), (1, 2, 0)), alpha=1)
-    plt.title(f"top-1 prediction: {label} (class_id={predicted_class})")
+    plt.title(f"{label} (class_id={predicted_class})")
     plt.axis("off")
+    
+    if save:
+        plt.savefig(name_to_save, bbox_inches='tight', pad_inches=0)    
+    
     plt.show()
 
 
