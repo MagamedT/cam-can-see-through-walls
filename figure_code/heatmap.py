@@ -175,7 +175,7 @@ def get_heatmaps(model, dataset_batch, class_target = None, layers_idx = None, m
 
 def plot_heatmap_with_wall(heatmaps, dataset, idx = 0, save = False):
 
-    name_to_save = f"img_{idx}.png"
+    name_to_save = f"../figures/img_{idx}.png"
 
     image = np.transpose((dataset[idx]/ (1000/225) + 0.5).squeeze().detach().cpu(), (1, 2, 0))
     gradCamMaps_tensor = heatmaps[idx]
@@ -199,7 +199,7 @@ def plot_heatmap_with_wall(heatmaps, dataset, idx = 0, save = False):
     # Before saving, adjust the figure's layout
     fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
 
-    if save=True:
+    if save==True:
         # Use 'bbox_inches' and 'pad_inches' to remove the white borders
         fig.savefig(name_to_save, bbox_inches='tight', pad_inches=0)
 
