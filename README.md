@@ -43,7 +43,7 @@ Alternativaly: create a Python environment (Python ≥ 3.9):
 3. **Get the datasets and the models**
 
    The datasets and model weights can be found in [this drive](https://drive.google.com/drive/folders/19LbSZcABEv3E0KB4KzlYQebjo8qDxr1S?usp=sharing).
-   Unzip the data into `figure_code/data/` and the models into `figure_code/models/`. `figure_code/` should have the following structure:
+   Unzip the data into `figure_code/data/` and move the models into `figure_code/models/`. `figure_code/` should have the following structure:
    ```
    figure_code/data/
    ├── stackmix/                      # STACK-MIX images (imagenet data)
